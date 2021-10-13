@@ -1,0 +1,147 @@
+:root {
+    font-size: 62.5%; 
+    --purple: #902ebb;
+    --orange: #f4831b;
+    --black: #1c1c1c;;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    color: var(--black);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 5.4rem;
+    text-transform: uppercase;
+}
+
+.title-dark {
+    color: var(--purple);
+}
+
+.title-light {
+    color: var(--orange);
+}
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
+    font-size: 1.8rem;
+    transition: 200ms transform;
+    margin-top: 2rem;
+    width: 12rem;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-.2rem);
+}
+
+.game-wrapper {
+    display: flex;
+    background-color: var(--orange);
+    margin-top: 5rem;
+    padding: 5rem;
+    border-radius: 2.5rem;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    background-color: var(--black);
+}
+
+.grid-box {
+    height: 16rem;
+    width: 16rem;
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+.container img {
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.pumpkin,
+.bones {
+    cursor: auto;
+}
+
+.gameFadeOut {
+    animation: gameFadeOut 1s linear;
+}
+
+@keyframes gameFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.bones_gif {
+    margin-top: 6rem;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 700px) {
+    .grid-box {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .container img {
+        width: 80%;
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .grid-box {
+        height: 9rem;
+        width: 9rem;
+    }
+    
+    .title {
+        font-size: 4rem;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        width: 10rem;
+    }
+}
